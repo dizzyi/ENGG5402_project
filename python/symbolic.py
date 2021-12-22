@@ -22,6 +22,12 @@ def Rotz(theta):
                  [sin(theta),  cos(theta), 0],
                  [0,                    0, 1]
                  ])
+def Roty(theta):
+  return Matrix([
+                 [ cos(theta), 0, sin(theta)],
+                 [          0, 1,          0],
+                 [-sin(theta), 0, cos(theta)]
+                 ])
 
 def DH(a, d, alpha, theta):
   Rz = Rotz(theta)
@@ -83,5 +89,4 @@ def Get_functions():
   j   = lambdify(q,J)
 
   return fk, eef, rot, j
-
 
